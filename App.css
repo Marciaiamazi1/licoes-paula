@@ -1,0 +1,219 @@
+/* ═══════════════════════════════════════════════
+   LIÇÕES DA PAULA — CSS GLOBAL
+   Colégio Portinari
+═══════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@700;800;900&display=swap');
+
+:root {
+  --bg: #f0f4ff;
+  --bg2: #ffffff;
+  --bg3: #e8eeff;
+  --header-bg: linear-gradient(135deg, #1a1a6e 0%, #2d2d9f 50%, #1a1a6e 100%);
+  --primary: #2d2d9f;
+  --accent: #f72585;
+  --green: #06d6a0;
+  --yellow: #ffd60a;
+  --red: #ff4757;
+  --orange: #ffa502;
+  --text: #1a1a3e;
+  --text2: #5a5a8a;
+  --border: rgba(45, 45, 159, 0.12);
+  --shadow: 0 4px 20px rgba(45, 45, 159, 0.1);
+  --shadow-lg: 0 8px 40px rgba(45, 45, 159, 0.18);
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--bg);
+  position: relative;
+}
+
+.main {
+  padding: 16px 14px 80px;
+}
+
+/* ── ERRO ── */
+.erro-box {
+  background: rgba(255, 71, 87, 0.08);
+  border: 1px solid rgba(255, 71, 87, 0.3);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: var(--red);
+  font-weight: 700;
+}
+.erro-dica { font-size: 12px; color: var(--text2); margin-top: 6px; font-weight: 600; }
+.btn-retry {
+  margin-top: 10px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255, 71, 87, 0.15);
+  border: none;
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ── TOAST ── */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text);
+  color: white;
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  z-index: 1000;
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateX(-50%) translateY(20px); opacity: 0; }
+  to { transform: translateX(-50%) translateY(0); opacity: 1; }
+}
+
+/* ── SEÇÃO ── */
+.secao-titulo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── BADGE ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.badge-prova { background: rgba(247, 37, 133, 0.15); color: #f72585; }
+.badge-lembrete { background: rgba(76, 201, 240, 0.15); color: #4cc9f0; }
+.badge-urgente { background: rgba(255, 71, 87, 0.15); color: var(--red); }
+.badge-atrasada { background: rgba(255, 71, 87, 0.2); color: var(--red); }
+.badge-pendente { background: rgba(255, 214, 10, 0.2); color: #c49a00; }
+.badge-concluida { background: rgba(6, 214, 160, 0.15); color: var(--green); }
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+/* ── MODAL OVERLAY ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 40, 0.6);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+}
+.modal-sheet {
+  width: 100%;
+  background: white;
+  border-radius: 24px 24px 0 0;
+  padding: 8px 20px 40px;
+  max-height: 92vh;
+  overflow-y: auto;
+}
+.modal-handle {
+  width: 40px; height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  margin: 10px auto 20px;
+}
+.modal-titulo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--text);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ── INPUT ── */
+.input-field {
+  width: 100%;
+  background: var(--bg3);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  color: var(--text);
+  font-size: 14px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.input-field:focus { border-color: var(--primary); }
+textarea.input-field { resize: none; }
+
+.input-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 7px;
+}
+
+/* ── BOTÕES ── */
+.btn-primary {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, var(--primary), #4361ee);
+  border: none;
+  border-radius: var(--radius);
+  color: white;
+  font-size: 15px;
+  font-weight: 900;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(45, 45, 159, 0.35);
+  margin-bottom: 10px;
+}
+.btn-secondary {
+  width: 100%;
+  padding: 13px;
+  background: var(--bg3);
+  border: none;
+  border-radius: var(--radius);
+  color: var(--text2);
+  font-size: 14px;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+}

@@ -1,0 +1,140 @@
+.calendario {
+  background: white;
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  margin-bottom: 16px;
+}
+
+.cal-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.cal-mes {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #1a1a3e;
+  text-transform: capitalize;
+}
+
+.cal-btn {
+  width: 34px; height: 34px;
+  border-radius: 10px;
+  background: rgba(45,45,159,0.08);
+  border: none;
+  font-size: 20px;
+  color: #2d2d9f;
+  cursor: pointer;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.cal-head {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 800;
+  color: #9090b0;
+  text-transform: uppercase;
+  padding: 4px 0;
+}
+
+.cal-vazio { /* espaço vazio */ }
+
+.cal-dia {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  color: #1a1a3e;
+  cursor: pointer;
+  transition: all 0.15s;
+  position: relative;
+}
+.cal-dia:hover { background: rgba(45,45,159,0.07); }
+
+.cal-hoje {
+  background: rgba(45,45,159,0.1);
+  color: #2d2d9f;
+  font-weight: 900;
+}
+
+.cal-selecionado {
+  background: #2d2d9f !important;
+  color: white !important;
+}
+
+.cal-pontos {
+  display: flex;
+  gap: 2px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cal-ponto {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  display: block;
+}
+
+.cal-detalhe {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(45,45,159,0.1);
+}
+
+.cal-detalhe-titulo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: #2d2d9f;
+  margin-bottom: 10px;
+}
+
+.cal-vazio-msg {
+  font-size: 13px;
+  color: #9090b0;
+  font-weight: 600;
+  text-align: center;
+  padding: 16px 0;
+}
+
+.cal-item {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #f8f9ff;
+  border-radius: 12px;
+  border: none;
+  margin-bottom: 7px;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Nunito', sans-serif;
+  transition: transform 0.15s;
+}
+.cal-item:hover { transform: translateX(4px); }
+
+.cal-item-emoji { font-size: 20px; flex-shrink: 0; }
+.cal-item-mat { font-size: 12px; font-weight: 900; display: flex; align-items: center; }
+.cal-item-desc { font-size: 12px; font-weight: 600; color: #5a5a8a; margin-top: 2px; }

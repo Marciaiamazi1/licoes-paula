@@ -1,0 +1,90 @@
+.status-wrap {
+  margin-bottom: 16px;
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.status-card {
+  background: white;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  padding: 10px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  position: relative;
+  font-family: 'Nunito', sans-serif;
+}
+
+.status-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.status-ativo {
+  background: color-mix(in srgb, var(--cor) 10%, white);
+  border-color: var(--cor);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--cor) 30%, transparent);
+}
+
+.status-icon { font-size: 18px; }
+
+.status-num {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--cor);
+  line-height: 1;
+}
+
+.status-label {
+  font-size: 9px;
+  font-weight: 800;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  text-align: center;
+}
+
+.status-check {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  font-size: 8px;
+  color: var(--cor);
+}
+
+.filtro-ativo-aviso {
+  margin-top: 8px;
+  padding: 8px 14px;
+  background: rgba(45, 45, 159, 0.07);
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #5a5a8a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filtro-ativo-aviso strong { color: #2d2d9f; }
+
+.filtro-limpar {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 11px;
+  font-weight: 800;
+  color: #f72585;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+}
